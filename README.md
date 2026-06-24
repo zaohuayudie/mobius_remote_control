@@ -46,6 +46,14 @@
 
 ## 截图预览
 
+### 官网（MobiusDesk WWW）
+
+基于 Astro 构建的项目介绍网站，展示产品功能与使用说明。
+
+<p align="center">
+  <img src="mobius_www/public/assets/www.png" width="80%" alt="MobiusDesk 官网" />
+</p>
+
 ### 桌面端
 
 <p align="center">
@@ -56,14 +64,19 @@
   <img src="mobius_www/public/assets/d22.png" width="45%" alt="文件传输管理" />
   <img src="mobius_www/public/assets/d3.png" width="45%" alt="设备列表管理" />
 </p>
+<p align="center">
+  <img src="mobius_www/public/assets/d4.png" width="45%" alt="系统设置" />
+</p>
 
 ### 手机端
 
 <p align="center">
-  <img src="mobius_www/public/assets/1.png" width="22%" alt="设备列表" />
-  <img src="mobius_www/public/assets/2.png" width="22%" alt="远程控制" />
-  <img src="mobius_www/public/assets/3.png" width="22%" alt="文件管理" />
-  <img src="mobius_www/public/assets/4.png" width="22%" alt="设置页面" />
+  <img src="mobius_www/public/assets/1.png" width="18%" alt="设备列表" />
+  <img src="mobius_www/public/assets/2.png" width="18%" alt="远程控制" />
+  <img src="mobius_www/public/assets/3.png" width="18%" alt="文件管理" />
+  <img src="mobius_www/public/assets/4.png" width="18%" alt="设置页面" />
+  <img src="mobius_www/public/assets/5.png" width="18%" alt="连接参数" />
+  <img src="mobius_www/public/assets/6.png" width="18%" alt="远程画面" />
 </p>
 
 ## 快速开始
