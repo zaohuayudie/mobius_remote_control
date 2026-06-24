@@ -1,0 +1,275 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const screenshots = [
+	{ src: '/assets/1.png', alt: '手机端设备列表', desc: '设备列表' },
+	{ src: '/assets/2.png', alt: '手机端远程控制', desc: '远程控制' },
+	{ src: '/assets/3.png', alt: '手机端文件管理', desc: '文件管理' },
+	{ src: '/assets/4.png', alt: '手机端设置页面', desc: '设置页面' },
+];
+
+const features = [
+	{
+		title: '触屏操控',
+		desc: '专为触屏设计的虚拟鼠标和键盘，支持手势操作，滑动、点击、长按自然映射',
+	},
+	{
+		title: '快捷工具栏',
+		desc: '底部快捷工具栏一键访问常用功能：键盘、鼠标模式切换、截屏、调整画质',
+	},
+	{
+		title: '自适应画质',
+		desc: '根据网络状况自动调整画质和帧率，弱网环境也能保持流畅操控',
+	},
+	{
+		title: '远程文件管理',
+		desc: '浏览远程电脑文件系统，上传下载文件，手机随时访问电脑资料',
+	},
+	{
+		title: '设备快速连接',
+		desc: '保存常用设备，一键快速连接，支持设备码和扫码连接',
+	},
+	{
+		title: '后台保活',
+		desc: '支持后台保持连接，切换应用后远程会话不断开，随时回来继续操控',
+	},
+];
+---
+
+<Layout title="手机端" activeNav="mobile">
+	<section class="page-hero">
+		<div class="page-hero-inner">
+			<div class="page-hero-icon">
+				<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+			</div>
+			<h1>手机端</h1>
+			<p>Android & iOS 双平台支持，手机也能随时随地远程控制电脑</p>
+		</div>
+	</section>
+
+	<section class="screenshots">
+		<div class="section-inner">
+			<h2 class="section-title">界面预览</h2>
+			<div class="screenshot-grid">
+				{screenshots.map(s => (
+					<div class="screenshot-item">
+						<div class="screenshot-frame">
+							<img src={s.src} alt={s.alt} loading="lazy" />
+						</div>
+						<span class="screenshot-label">{s.desc}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="detail-features">
+		<div class="section-inner">
+			<h2 class="section-title">功能特性</h2>
+			<div class="feature-list">
+				{features.map((f, i) => (
+					<div class="feature-row">
+						<div class="feature-num">{String(i + 1).padStart(2, '0')}</div>
+						<div class="feature-body">
+							<h3>{f.title}</h3>
+							<p>{f.desc}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<div class="section-inner">
+			<div class="cta-card">
+				<h2>下载手机端 App</h2>
+				<p>在手机上安装 Mobius，随时远程控制你的电脑</p>
+				<a href="/download" class="btn btn-primary">前往下载</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(37, 99, 235, 0.04));
+		padding: 64px 24px;
+		text-align: center;
+	}
+
+	.page-hero-inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.page-hero-icon {
+		width: 80px;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(124, 58, 237, 0.1);
+		border-radius: 20px;
+		color: var(--color-accent);
+		margin: 0 auto 20px;
+	}
+
+	.page-hero h1 {
+		font-size: 36px;
+		font-weight: 800;
+		margin-bottom: 12px;
+	}
+
+	.page-hero p {
+		font-size: 16px;
+		color: var(--color-text-secondary);
+	}
+
+	.section-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 80px 24px;
+	}
+
+	.section-title {
+		font-size: 28px;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 48px;
+	}
+
+	.screenshot-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 24px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.screenshot-item {
+		text-align: center;
+	}
+
+	.screenshot-frame {
+		background: #1e293b;
+		border-radius: 16px;
+		padding: 8px;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		overflow: hidden;
+	}
+
+	.screenshot-frame img {
+		width: 100%;
+		border-radius: 10px;
+		display: block;
+	}
+
+	.screenshot-label {
+		display: block;
+		margin-top: 10px;
+		font-size: 13px;
+		font-weight: 500;
+		color: var(--color-text-secondary);
+	}
+
+	.feature-list {
+		max-width: 720px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.feature-row {
+		display: flex;
+		gap: 20px;
+		padding: 24px;
+		background: var(--color-surface);
+		border-radius: var(--radius);
+		border: 1px solid var(--color-border);
+		transition: all 0.2s;
+	}
+
+	.feature-row:hover {
+		border-color: rgba(124, 58, 237, 0.3);
+		box-shadow: var(--shadow-md);
+	}
+
+	.feature-num {
+		font-size: 32px;
+		font-weight: 800;
+		color: rgba(124, 58, 237, 0.15);
+		line-height: 1;
+		min-width: 48px;
+	}
+
+	.feature-body h3 {
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 6px;
+	}
+
+	.feature-body p {
+		font-size: 14px;
+		line-height: 1.6;
+		color: var(--color-text-secondary);
+	}
+
+	.cta-card {
+		text-align: center;
+		padding: 48px;
+		background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+		border-radius: 20px;
+		color: #fff;
+	}
+
+	.cta-card h2 {
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	.cta-card p {
+		font-size: 15px;
+		opacity: 0.85;
+		margin-bottom: 24px;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 28px;
+		font-size: 15px;
+		font-weight: 600;
+		border-radius: 10px;
+		text-decoration: none;
+		transition: all 0.2s;
+	}
+
+	.btn-primary {
+		background: #fff;
+		color: var(--color-accent);
+	}
+
+	.btn-primary:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	}
+
+	@media (max-width: 768px) {
+		.screenshot-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.page-hero h1 {
+			font-size: 28px;
+		}
+
+		.feature-row {
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+</style>

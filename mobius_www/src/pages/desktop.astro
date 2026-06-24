@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const screenshots = [
+	{ src: '/assets/d1.png', alt: '远程桌面连接', desc: '远程桌面连接' },
+	{ src: '/assets/d21.png', alt: '远程控制操作', desc: '远程控制操作' },
+	{ src: '/assets/d22.png', alt: '文件传输管理', desc: '文件传输管理' },
+	{ src: '/assets/d3.png', alt: '设备列表管理', desc: '设备列表管理' },
+	{ src: '/assets/d4.png', alt: '控制桌面', desc: '控制桌面' },
+];
+
+const features = [
+	{
+		title: '远程桌面查看',
+		desc: '实时查看远程电脑屏幕，支持多显示器切换，画面流畅清晰，延迟极低',
+	},
+	{
+		title: '键盘鼠标控制',
+		desc: '完整的键盘和鼠标操控能力，支持快捷键组合，操作体验如同本地',
+	},
+	{
+		title: '文件传输',
+		desc: '双向文件传输，支持拖拽操作，断点续传，传输速度优化',
+	},
+	{
+		title: '设备管理',
+		desc: '统一管理所有远程设备，查看在线状态，快速连接常用设备',
+	},
+	{
+		title: '多显示器支持',
+		desc: '自动识别远程多显示器，支持切换或同时查看多个屏幕',
+	},
+	{
+		title: '剪贴板共享',
+		desc: '本地与远程设备间共享剪贴板内容，复制粘贴无缝衔接',
+	},
+];
+---
+
+<Layout title="桌面端" activeNav="desktop">
+	<section class="page-hero">
+		<div class="page-hero-inner">
+			<div class="page-hero-icon">
+				<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+			</div>
+			<h1>桌面端</h1>
+			<p>Windows / macOS / Linux 全平台支持，功能完整的远程控制客户端</p>
+		</div>
+	</section>
+
+	<section class="screenshots">
+		<div class="section-inner">
+			<h2 class="section-title">界面预览</h2>
+			<div class="screenshot-grid">
+				{screenshots.map(s => (
+					<div class="screenshot-item">
+						<div class="screenshot-frame">
+							<img src={s.src} alt={s.alt} loading="lazy" />
+						</div>
+						<span class="screenshot-label">{s.desc}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="detail-features">
+		<div class="section-inner">
+			<h2 class="section-title">功能特性</h2>
+			<div class="feature-list">
+				{features.map((f, i) => (
+					<div class="feature-row">
+						<div class="feature-num">{String(i + 1).padStart(2, '0')}</div>
+						<div class="feature-body">
+							<h3>{f.title}</h3>
+							<p>{f.desc}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<div class="section-inner">
+			<div class="cta-card">
+				<h2>开始使用桌面端</h2>
+				<p>下载安装 Mobius 桌面客户端，即刻体验远程控制</p>
+				<a href="/download" class="btn btn-primary">前往下载</a>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page-hero {
+		background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(124, 58, 237, 0.04));
+		padding: 64px 24px;
+		text-align: center;
+	}
+
+	.page-hero-inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.page-hero-icon {
+		width: 80px;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(37, 99, 235, 0.1);
+		border-radius: 20px;
+		color: var(--color-primary);
+		margin: 0 auto 20px;
+	}
+
+	.page-hero h1 {
+		font-size: 36px;
+		font-weight: 800;
+		margin-bottom: 12px;
+	}
+
+	.page-hero p {
+		font-size: 16px;
+		color: var(--color-text-secondary);
+	}
+
+	.section-inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 80px 24px;
+	}
+
+	.section-title {
+		font-size: 28px;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 48px;
+	}
+
+	.screenshot-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 32px;
+	}
+
+	.screenshot-item {
+		text-align: center;
+	}
+
+	.screenshot-frame {
+		background: #1e293b;
+		border-radius: 12px;
+		padding: 12px;
+		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+		overflow: hidden;
+	}
+
+	.screenshot-frame img {
+		width: 100%;
+		border-radius: 6px;
+		display: block;
+	}
+
+	.screenshot-label {
+		display: block;
+		margin-top: 12px;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--color-text-secondary);
+	}
+
+	.feature-list {
+		max-width: 720px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.feature-row {
+		display: flex;
+		gap: 20px;
+		padding: 24px;
+		background: var(--color-surface);
+		border-radius: var(--radius);
+		border: 1px solid var(--color-border);
+		transition: all 0.2s;
+	}
+
+	.feature-row:hover {
+		border-color: rgba(37, 99, 235, 0.3);
+		box-shadow: var(--shadow-md);
+	}
+
+	.feature-num {
+		font-size: 32px;
+		font-weight: 800;
+		color: rgba(37, 99, 235, 0.15);
+		line-height: 1;
+		min-width: 48px;
+	}
+
+	.feature-body h3 {
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 6px;
+	}
+
+	.feature-body p {
+		font-size: 14px;
+		line-height: 1.6;
+		color: var(--color-text-secondary);
+	}
+
+	.cta-card {
+		text-align: center;
+		padding: 48px;
+		background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+		border-radius: 20px;
+		color: #fff;
+	}
+
+	.cta-card h2 {
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 8px;
+	}
+
+	.cta-card p {
+		font-size: 15px;
+		opacity: 0.85;
+		margin-bottom: 24px;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 28px;
+		font-size: 15px;
+		font-weight: 600;
+		border-radius: 10px;
+		text-decoration: none;
+		transition: all 0.2s;
+	}
+
+	.btn-primary {
+		background: #fff;
+		color: var(--color-primary);
+	}
+
+	.btn-primary:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+	}
+
+	@media (max-width: 768px) {
+		.screenshot-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.page-hero h1 {
+			font-size: 28px;
+		}
+
+		.feature-row {
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+</style>
